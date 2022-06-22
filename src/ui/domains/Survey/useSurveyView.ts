@@ -1,6 +1,22 @@
 import { useState } from "react";
 
 export const useSurveyView = () => {
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+  const [endDate, setEndDate] = useState<Date | null>(new Date());
+
+  const [startDateSelected, setStartDateSelected] = useState(false);
+  const [endDateSelected, setEndDateSelected] = useState(false);
+
+  const handleStartDateChange = (newValue: Date | null) => {
+    setStartDate(newValue);
+    setStartDateSelected(true);
+  };
+
+  const handleEndDateChange = (newValue: Date | null) => {
+    setEndDate(newValue);
+    setEndDateSelected(true);
+  };
+
   const [selectedBtnOne, setSelectedBtnOne] = useState("");
   const [selectedBtnTwo, setSelectedBtnTwo] = useState("");
   const [selectedBtnThree, setSelectedBtnThree] = useState("");
@@ -32,6 +48,8 @@ export const useSurveyView = () => {
     selectedBtnNine === ""
       ? true
       : false;
+
+  const handleDateChange = startDateSelected && endDateSelected ? false : true;
 
   const handleButtonClick = () => {
     console.log(
@@ -85,8 +103,21 @@ export const useSurveyView = () => {
       handleChange: handleChangeBtnnine,
     },
     buttonState: {
-      disabled: handleButtonDisabled,
+      disabled: handleButtonDisabled || handleDateChange,
       onClick: handleButtonClick,
+    },
+
+    dateState: {
+      startDateState: {
+        value: startDate,
+        onChange: handleStartDateChange,
+        selected: startDateSelected,
+      },
+      endDateState: {
+        value: endDate,
+        onChange: handleEndDateChange,
+        selected: endDateSelected,
+      },
     },
   };
 };

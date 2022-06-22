@@ -9,28 +9,27 @@ type QuestionnaireDateProps = {
   number: string;
   title: string;
   desc: string;
+  state: dateStateProps;
+};
+
+type dateStateProps = {
+  startDateState: {
+    value: Date | null;
+    onChange: (p: Date | null) => void;
+    selected: boolean;
+  };
+  endDateState: {
+    value: Date | null;
+    onChange: (p: Date | null) => void;
+    selected: boolean;
+  };
 };
 export const QuestionnaireDate = ({
   number,
   title,
   desc,
+  state,
 }: QuestionnaireDateProps) => {
-  const [startDate, setStartDate] = useState<Date | null>(new Date());
-  const [endDate, setEndDate] = useState<Date | null>(new Date());
-
-  const [startDateSelected, setStartDateSelected] = useState(false);
-  const [endDateSelected, setEndDateSelected] = useState(false);
-
-  const handleStartDateChange = (newValue: Date | null) => {
-    setStartDate(newValue);
-    setStartDateSelected(true);
-  };
-
-  const handleEndDateChange = (newValue: Date | null) => {
-    setEndDate(newValue);
-    setEndDateSelected(true);
-  };
-
   return (
     <div css={styles.root}>
       <div css={styles.wrapper}>
@@ -49,12 +48,12 @@ export const QuestionnaireDate = ({
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               inputFormat="yyyy-MM-dd"
-              value={startDate}
-              onChange={handleStartDateChange}
+              value={state.startDateState.value}
+              onChange={state.startDateState.onChange}
               renderInput={(p) => (
                 <TextField
                   sx={{ width: "100%" }}
-                  css={startDateSelected && styles.pickerField}
+                  css={state.startDateState.selected && styles.pickerField}
                   {...p}
                 />
               )}
@@ -64,12 +63,12 @@ export const QuestionnaireDate = ({
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               inputFormat="yyyy-MM-dd"
-              value={endDate}
-              onChange={handleEndDateChange}
+              value={state.endDateState.value}
+              onChange={state.endDateState.onChange}
               renderInput={(p) => (
                 <TextField
                   sx={{ width: "100%" }}
-                  css={endDateSelected && styles.pickerField}
+                  css={state.endDateState.selected && styles.pickerField}
                   {...p}
                 />
               )}

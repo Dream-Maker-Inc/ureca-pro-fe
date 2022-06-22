@@ -7,8 +7,18 @@ import { models } from "./model/SurveyView.model";
 import { useSurveyView } from "./useSurveyView";
 export const SurveyView = () => {
   const model = models;
-  const { one, two, three, four, five, six, seven, eight, nine, buttonState } =
-    useSurveyView();
+  const {
+    one,
+    two,
+    three,
+    four,
+    five,
+    seven,
+    eight,
+    nine,
+    buttonState,
+    dateState,
+  } = useSurveyView();
 
   return (
     <div css={styles.root}>
@@ -81,6 +91,7 @@ export const SurveyView = () => {
           desc={
             "페이지당 최소 1~2일이 소요되며, 페이지당 하루 안에 마감되어야 하는 급건일 경우 진행이 거절될 수 있으니, 최소한 여유로운 시간을 확보하신 후 문의 부탁드립니다."
           }
+          state={dateState}
         />
 
         <div css={styles.wrapper}>
