@@ -26,7 +26,7 @@ export const SurveyView = () => {
       <Stack css={styles.container} spacing={"100px"}>
         <Questionnaire
           number={"1"}
-          title={"페이지 구축문의"}
+          title={"페이지 구축 목적"}
           desc={
             "구축 목적에 따라 이미지 리소스나 배포 방식이 달라지기 때문에, 대략적인 페이지 구축의 목적이 필요합니다."
           }

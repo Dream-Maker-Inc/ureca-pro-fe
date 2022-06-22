@@ -21,7 +21,7 @@ export const models: modelsType[] = [
         value: "3",
         text: "웹앱 구축 목적 (하이브리드 웹 에서의 퍼블리싱 등)",
       },
-      { value: "4", text: "기타 (직접 입력)" },
+      { value: "4", text: "기타" },
     ],
   },
   {
@@ -83,7 +83,7 @@ export const models: modelsType[] = [
       },
       {
         value: "5",
-        text: "기타 (직접 입력)",
+        text: "기타",
       },
     ],
   },
@@ -104,7 +104,7 @@ export const models: modelsType[] = [
       },
       {
         value: "4",
-        text: "기타 (직접 입력)",
+        text: "기타",
       },
     ],
   },
@@ -133,7 +133,7 @@ export const models: modelsType[] = [
       },
       {
         value: "5",
-        text: "기타 웹서버에 배포 (직접 입력)",
+        text: "기타 웹서버에 배포",
       },
     ],
   },
@@ -154,7 +154,7 @@ export const models: modelsType[] = [
       },
       {
         value: "4",
-        text: "기타 (직접 입력)",
+        text: "기타",
       },
     ],
   },
@@ -187,7 +187,7 @@ export const models: modelsType[] = [
       },
       {
         value: "7",
-        text: "기타 (직접 입력)",
+        text: "기타",
       },
     ],
   },

@@ -8,11 +8,11 @@ export const QuestionnaireAlert = () => {
       <Stack css={styles.box} spacing={"10px"}>
         <Stack css={styles.wrapper} direction="row" spacing={"10px"}>
           <ErrorOutlineOutlinedIcon css={styles.icon} />
-          <Typography color="white" fontSize="12px" fontWeight={700}>
+          <Typography color="white" fontSize="14px" fontWeight={700}>
             실서버가 무엇인가요?
           </Typography>
         </Stack>
-        <Typography color="rgba(0,0,0,0.9)" fontSize="12px" lineHeight="14px">
+        <Typography color="rgba(0,0,0,0.6)" fontSize="14px" lineHeight={1.4}>
           고객님이 요청하신 결과물을 실제 고객들이 웹사이트에 접속해서 보기
           위해서는 실제 인터넷에 공유할 수 있는 서버가 필요합니다. 해당 서버를
           보유하고 계시지 않다면 신규로 신청하셔야 하며, 이미 신청하신 호스팅
@@ -43,7 +43,7 @@ const styles = {
     align-items: start;
   `,
   wrapper: css`
-    padding: 2px 8px;
+    padding: 4px 8px;
     background-color: #2d82ff;
     border-radius: 4px;
 
@@ -51,8 +51,9 @@ const styles = {
     align-items: center;
   `,
   icon: css`
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+
     color: white;
   `,
 };
