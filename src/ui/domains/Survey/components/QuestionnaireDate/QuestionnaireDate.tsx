@@ -40,7 +40,7 @@ export const QuestionnaireDate = ({
       <div css={styles.bottomWrapper}>
         <Desc>{desc}</Desc>
         <Stack
-          width={"620px"}
+          width={"100%"}
           spacing={"12px"}
           direction={"row"}
           display="flex"
@@ -84,7 +84,6 @@ export const QuestionnaireDate = ({
 const styles = {
   root: css`
     width: 100%;
-    max-width: 620px;
   `,
   circleChip: css`
     width: 32px;
@@ -101,7 +100,7 @@ const styles = {
   `,
   bottomWrapper: css`
     width: 100%;
-    margin-left: 40px;
+    padding: 0 40px;
   `,
   hr: css`
     width: 40px;

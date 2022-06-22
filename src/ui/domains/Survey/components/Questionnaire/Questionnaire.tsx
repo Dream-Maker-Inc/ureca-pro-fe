@@ -8,19 +8,22 @@ import {
   TypographyProps,
 } from "@mui/material";
 
-import { useState } from "react";
-
-type QuestionnaireProps = {
+export type QuestionnaireProps = {
   number: string;
   title: string;
   desc: string;
   btnData: QuestionnaireBtnModel[];
+  state: SelectedBtnStateModel;
 };
 
-type QuestionnaireBtnModel = {
-  name: string;
+export type QuestionnaireBtnModel = {
   value: string;
   text: string;
+};
+
+export type SelectedBtnStateModel = {
+  selectedValue: string;
+  onSelectedChange: (p: string) => void;
 };
 
 export const Questionnaire = ({
@@ -28,8 +31,9 @@ export const Questionnaire = ({
   title,
   desc,
   btnData,
+  state,
 }: QuestionnaireProps) => {
-  const [selectedBtn, setSelectedBtn] = useState("");
+  //const [selectedBtn, setSelectedBtn] = useState("");
 
   return (
     <div css={styles.root}>
@@ -43,23 +47,30 @@ export const Questionnaire = ({
           variant="outlined"
           color="secondary"
           orientation="vertical"
+          fullWidth
         >
           {btnData.map((it, index) => (
-            <Box width="612px" key={index}>
+            <Box width={"100%"} key={index}>
               <CustomButton
-                onClick={() => setSelectedBtn(it.value)}
-                color={selectedBtn === it.value ? "primary" : "secondary"}
+                onClick={() => state.onSelectedChange(it.value)}
+                color={
+                  state.selectedValue === it.value ? "primary" : "secondary"
+                }
                 sx={{
                   backgroundColor:
-                    selectedBtn === it.value
+                    state.selectedValue === it.value
                       ? "rgba(45, 130, 255, 0.1)"
                       : "white",
                 }}
               >
                 <Typography
-                  color={selectedBtn === it.value ? "primary" : "secondary"}
-                  fontSize="16px"
-                  fontWeight={selectedBtn === it.value ? "bold" : "normal"}
+                  color={
+                    state.selectedValue === it.value ? "primary" : "secondary"
+                  }
+                  fontSize={it.text.length > 25 ? "12px" : "16px"}
+                  fontWeight={
+                    state.selectedValue === it.value ? "bold" : "normal"
+                  }
                 >
                   {it.text}
                 </Typography>
@@ -75,7 +86,6 @@ export const Questionnaire = ({
 const styles = {
   root: css`
     width: 100%;
-    max-width: 620px;
   `,
   circleChip: css`
     width: 32px;
@@ -87,15 +97,17 @@ const styles = {
     justify-content: center;
   `,
   wrapper: css`
+    width: 100%;
     display: flex;
     align-items: center;
   `,
   bottomWrapper: css`
     width: 100%;
-    margin-left: 40px;
+    padding: 0 40px;
   `,
 
   button: css`
+    width: 100%;
     border-radius: 8px;
     margin-top: 10px;
 
