@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { basicPalette } from "./color";
+import { basicPalette } from "./Color";
 
 export const defaultTheme = createTheme({
   palette: basicPalette,
@@ -14,8 +14,9 @@ export const defaultTheme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        root: {
-          borderRadius: "8px",
+        root: {},
+        outlined: {
+          borderColor: "#ccc",
         },
       },
     },

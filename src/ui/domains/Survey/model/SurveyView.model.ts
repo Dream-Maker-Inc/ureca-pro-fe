@@ -29,11 +29,11 @@ export const models: modelsType[] = [
     data: [
       {
         value: "1",
-        text: "순수 HTML 스펙 (HTML, CSS, JavaScript 등)",
+        text: "리액트 SPA 스펙 (React, TypeScript, MUI, Emotion 등)",
       },
       {
         value: "2",
-        text: "리액트 SPA 스펙 (React, TypeScript, MUI, Emotion 등)",
+        text: "순수 HTML 스펙 (HTML, CSS, JavaScript 등)",
       },
     ],
   },

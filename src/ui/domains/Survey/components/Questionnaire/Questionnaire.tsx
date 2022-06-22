@@ -67,7 +67,7 @@ export const Questionnaire = ({
                   color={
                     state.selectedValue === it.value ? "primary" : "secondary"
                   }
-                  fontSize={it.text.length > 49 ? "12px" : "16px"}
+                  fontSize={"16px"}
                   fontWeight={
                     state.selectedValue === it.value ? "bold" : "normal"
                   }

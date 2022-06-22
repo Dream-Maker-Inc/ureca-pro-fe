@@ -77,7 +77,8 @@ const styles = {
   `,
 
   button: css`
-    width: 648px;
+    width: 100%;
+    max-width: 648px;
     height: 60px;
 
     background-color: #2d82ff;
