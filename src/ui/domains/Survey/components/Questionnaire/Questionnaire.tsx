@@ -111,6 +111,7 @@ const styles = {
     border-radius: 8px;
     margin-top: 10px;
 
+    text-transform: none;
     height: 40px;
   `,
 };
