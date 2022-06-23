@@ -4,28 +4,27 @@ name: S3 Upload
 # main 브랜치에 push 할 경우 본 액션이 동작함
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-
   upload:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
-			# Node.js 환경일 경우에만 해당
-			- uses: actions/setup-node@v1
-				with: 
-					node-version: [17.x]
-			- name: Setup Yarn
-				run: npm install -g yarn
-			- name: Start Build
-				run: |
-					yarn
-					yarn build
+      # Node.js 환경일 경우에만 해당
+      - uses: actions/setup-node@v1
+        with:
+          node-version: [17.x]
+      - name: Setup Yarn
+        run: npm install -g yarn
+      - name: Start Build
+        run: |
+          yarn
+          yarn build
 
-			# S3 업로드 액션 시작
+      # S3 업로드 액션 시작
       - uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
