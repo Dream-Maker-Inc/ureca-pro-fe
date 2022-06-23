@@ -36,13 +36,9 @@ const styles = {
 
     display: flex;
     align-items: center;
-    padding: 0 24px;
+    padding: 0 16px;
 
     margin: 0 auto;
-
-    ${mq[1]} {
-      padding: 0 16px;
-    }
   `,
   headerIcon: css`
     color: #2d82ff;
@@ -53,7 +49,7 @@ const styles = {
     cursor: pointer;
 
     ${mq[1]} {
-      font-size: 24px;
+      font-size: 32px;
     }
   `,
 
@@ -64,7 +60,7 @@ const styles = {
     margin: 0 auto;
     margin-top: 80px;
 
-    padding: 0 24px;
+    padding: 0 16px;
 
     ${mq[1]} {
       padding: 0 16px;
@@ -126,12 +122,7 @@ const styles = {
 
     ${mq[4]} {
       height: 50px;
-      font-size: 14px;
-    }
-
-    ${mq[1]} {
-      height: 40px;
-      font-size: 12px;
+      font-size: 16px;
     }
   `,
   alertTitleWrapper: css`

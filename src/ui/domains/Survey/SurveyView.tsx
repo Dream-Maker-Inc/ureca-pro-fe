@@ -1,3 +1,4 @@
+import { mq } from "@/ui/theme/Screen";
 import { css } from "@emotion/react";
 import { Button, Stack, Typography } from "@mui/material";
 import Link from "next/link";
@@ -24,7 +25,7 @@ export const SurveyView = () => {
   return (
     <div css={styles.root}>
       <Header />
-      <Stack css={styles.container} spacing={"100px"}>
+      <Stack css={styles.container} spacing={"90px"}>
         <Questionnaire
           number={"1"}
           title={"페이지 구축 목적"}
@@ -140,9 +141,7 @@ export const SurveyView = () => {
             color="primary"
             css={styles.button}
           >
-            <Typography color="white" fontSize="20px">
-              제출하기
-            </Typography>
+            <Typography color="white">제출하기</Typography>
           </Button>
         </div>
       </Stack>
@@ -178,6 +177,10 @@ const styles = {
     padding: 0 16px;
 
     margin: 0 auto;
+
+    ${mq[1]} {
+      padding: 0 16px;
+    }
   `,
   headerIcon: css`
     color: #2d82ff;
@@ -186,6 +189,10 @@ const styles = {
     font-family: "Karla" sans-serif;
 
     cursor: pointer;
+
+    ${mq[1]} {
+      font-size: 32px;
+    }
   `,
 
   container: css`
@@ -198,6 +205,10 @@ const styles = {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    ${mq[1]} {
+      padding: 150px 16px 70px 16px;
+    }
   `,
 
   wrapper: css`
@@ -210,6 +221,13 @@ const styles = {
   button: css`
     width: 100%;
     height: 60px;
+
+    font-size: 20px;
+
+    ${mq[4]} {
+      height: 50px;
+      font-size: 16px;
+    }
   `,
 };
 
