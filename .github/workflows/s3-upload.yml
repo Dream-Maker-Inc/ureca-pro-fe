@@ -4,7 +4,7 @@ name: S3 Upload
 # main 브랜치에 push 할 경우 본 액션이 동작함
 on:
   push:
-    branches: ["main"]
+    branches: ["feature#2"]
 
 jobs:
   upload:
