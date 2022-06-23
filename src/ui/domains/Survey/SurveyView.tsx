@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { Button, Stack, Typography } from "@mui/material";
+import Link from "next/link";
 import { Questionnaire } from "./components/Questionnaire";
 import { QuestionnaireAlert } from "./components/QuestionnaireAlert";
 import { QuestionnaireDate } from "./components/QuestionnaireDate";
@@ -216,7 +217,9 @@ const Header = () => {
   return (
     <header css={styles.header}>
       <div css={styles.headerContainer}>
-        <h2 css={styles.headerIcon}>ureca</h2>
+        <Link href="/">
+          <h2 css={styles.headerIcon}>ureca</h2>
+        </Link>
       </div>
     </header>
   );

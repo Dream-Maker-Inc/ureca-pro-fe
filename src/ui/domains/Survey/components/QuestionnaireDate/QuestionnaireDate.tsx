@@ -1,9 +1,10 @@
 import { css } from "@emotion/react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { useState } from "react";
+
 import { Stack, TextField, Typography, TypographyProps } from "@mui/material";
 import { DesktopDatePicker } from "@mui/x-date-pickers";
+import { mq } from "@/ui/theme/Screen";
 
 type QuestionnaireDateProps = {
   number: string;
@@ -59,7 +60,7 @@ export const QuestionnaireDate = ({
               )}
             />
           </LocalizationProvider>
-          <div css={styles.hr}></div>
+          <div css={styles.hr}>~</div>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DesktopDatePicker
               inputFormat="yyyy-MM-dd"
@@ -96,16 +97,41 @@ const styles = {
   wrapper: css`
     display: flex;
     align-items: center;
+    margin-bottom: 4px;
   `,
   bottomWrapper: css`
     width: 100%;
     padding: 0 40px;
   `,
-  hr: css`
-    width: 40px;
-    height: 1px;
-    background-color: rgba(0, 0, 0, 0.7);
+
+  title: css`
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 10px;
+
+    ${mq[1]} {
+      font-size: 16px;
+    }
   `,
+  desc: css`
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+    ${mq[1]} {
+      font-size: 12px;
+      margin-left: 0px;
+      margin-bottom: 10px;
+    }
+  `,
+
+  hr: css`
+    color: rgba(0, 0, 0, 0.4);
+  `,
+
   pickerField: css`
     & input {
       color: #2d82ff;
@@ -127,27 +153,10 @@ const NumberChip = (p: TypographyProps) => {
 
 const Title = (p: TypographyProps) => {
   return (
-    <Typography
-      color="color: rgba(0, 0, 0, 0.8)"
-      fontWeight={700}
-      fontSize={"20px"}
-      lineHeight={1}
-      ml={"10px"}
-      {...p}
-    />
+    <Typography color="color: rgba(0, 0, 0, 0.8)" css={styles.title} {...p} />
   );
 };
 
 const Desc = (p: TypographyProps) => {
-  return (
-    <Typography
-      color="rgba(0, 0, 0, 0.7);"
-      fontWeight={400}
-      fontSize={"14px"}
-      lineHeight={"20px"}
-      mt={"10px"}
-      mb={"20px"}
-      {...p}
-    />
-  );
+  return <Typography color="rgba(0, 0, 0, 0.7);" css={styles.desc} {...p} />;
 };

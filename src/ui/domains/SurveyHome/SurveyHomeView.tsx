@@ -1,3 +1,4 @@
+import { mq } from "@/ui/theme/Screen";
 import { css } from "@emotion/react";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 import Link from "next/link";
@@ -38,6 +39,10 @@ const styles = {
     padding: 0 24px;
 
     margin: 0 auto;
+
+    ${mq[1]} {
+      padding: 0 16px;
+    }
   `,
   headerIcon: css`
     color: #2d82ff;
@@ -46,6 +51,10 @@ const styles = {
     font-family: "Karla" sans-serif;
 
     cursor: pointer;
+
+    ${mq[1]} {
+      font-size: 24px;
+    }
   `,
 
   contentContainer: css`
@@ -54,13 +63,27 @@ const styles = {
 
     margin: 0 auto;
     margin-top: 80px;
+
     padding: 0 24px;
+
+    ${mq[1]} {
+      padding: 0 16px;
+      margin-top: 0px;
+    }
   `,
   title: css`
     font-size: 40px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.8);
     margin-bottom: 30px;
+
+    ${mq[4]} {
+      font-size: 32px;
+    }
+    ${mq[1]} {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   `,
 
   contentTitleSpan: css`
@@ -74,6 +97,16 @@ const styles = {
     list-style-type: disc;
     margin-left: 24px;
     margin-bottom: 100px;
+
+    ${mq[4]} {
+      font-size: 14px;
+      line-height: 26px;
+    }
+    ${mq[1]} {
+      font-size: 12px;
+      line-height: 22px;
+      margin-bottom: 60px;
+    }
   `,
 
   button: css`
@@ -90,24 +123,53 @@ const styles = {
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     cursor: pointer;
+
+    ${mq[4]} {
+      height: 50px;
+      font-size: 14px;
+    }
+
+    ${mq[1]} {
+      height: 40px;
+      font-size: 12px;
+    }
   `,
   alertTitleWrapper: css`
     display: flex;
     align-items: center;
     margin-top: 40px;
     margin-bottom: 4px;
+    ${mq[1]} {
+      margin-top: 20px;
+      margin-bottom: 2px;
+    }
   `,
   alertTitle: css`
     font-weight: 500;
     font-size: 16px;
     line-height: 23px;
     margin-left: 6px;
+
+    ${mq[4]} {
+      font-size: 14px;
+    }
+    ${mq[1]} {
+      font-size: 12px;
+    }
   `,
   alertContent: css`
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
     margin-left: 30px;
+
+    ${mq[4]} {
+      font-size: 12px;
+    }
+    ${mq[1]} {
+      font-size: 10px;
+      line-height: 14px;
+    }
   `,
 
   alertContentSpan: css`
@@ -120,7 +182,9 @@ const Header = () => {
   return (
     <header css={styles.header}>
       <div css={styles.headerContainer}>
-        <h2 css={styles.headerIcon}>ureca.</h2>
+        <Link href="/">
+          <h2 css={styles.headerIcon}>ureca</h2>
+        </Link>
       </div>
     </header>
   );
