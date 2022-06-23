@@ -32,7 +32,7 @@ jobs:
           aws_bucket: ${{ secrets.AWS_BUCKET }}
 
           # 로컬 프로젝트에서 실제 업로드할 파일의 경로 (디렉토리) '/' 없이 순수 디렉토리명만 기재
-          source_dir: "_next"
+          source_dir: "out"
 
           # 실제 S3 에 업로드 되는 디렉토리명
           # 업로드가 완료된 후 S3 URL 인 http://portfolio-ureca.s3-website.ap-northeast-2.amazonaws.com/ 뒤에 {destination_dir} 이 그대로 붙음
