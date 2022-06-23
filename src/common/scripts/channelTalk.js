@@ -1,17 +1,4 @@
-import "@/common/styles/globals.css";
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "@mui/material/styles";
-import { defaultTheme } from "@/ui/theme/CustomTheme";
-import Script from "next/script";
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-      <Component {...pageProps} />
-      <Script
-        id="channelTalk"
-        dangerouslySetInnerHTML={{
-          __html: `(function () {
+(function () {
   var w = window;
   if (w.ChannelIO) {
     return (window.console.error || window.console.log || function () {})(
@@ -51,11 +38,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 ChannelIO("boot", {
   pluginKey: "139fcbba-5a00-42f7-bf9d-8741c97a92d2",
 });
-`,
-        }}
-      />
-    </ThemeProvider>
-  );
-}
-
-export default MyApp;
