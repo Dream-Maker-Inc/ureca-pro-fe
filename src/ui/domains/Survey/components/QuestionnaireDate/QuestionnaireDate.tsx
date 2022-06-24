@@ -51,6 +51,7 @@ export const QuestionnaireDate = ({
               inputFormat="yyyy-MM-dd"
               value={state.startDateState.value}
               onChange={state.startDateState.onChange}
+              disablePast
               renderInput={(p) => (
                 <TextField
                   sx={{ width: "100%" }}
@@ -66,6 +67,9 @@ export const QuestionnaireDate = ({
               inputFormat="yyyy-MM-dd"
               value={state.endDateState.value}
               onChange={state.endDateState.onChange}
+              disablePast
+              disableHighlightToday
+              disabled={!state.startDateState.value}
               renderInput={(p) => (
                 <TextField
                   sx={{ width: "100%" }}
