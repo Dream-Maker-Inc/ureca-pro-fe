@@ -1,15 +1,21 @@
 import { useState } from "react";
+import { addDays } from "date-fns";
 
 export const useSurveyView = () => {
-  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [startDate, setStartDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 1),
+      key: "selection",
+    },
+  ]);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
   const [startDateSelected, setStartDateSelected] = useState(false);
   const [endDateSelected, setEndDateSelected] = useState(false);
 
-  const handleStartDateChange = (newValue: Date | null) => {
-    setStartDate(newValue);
-    setStartDateSelected(true);
+  const handleStartDateChange = (item: any) => {
+    setStartDate([item.selection]);
   };
 
   const handleEndDateChange = (newValue: Date | null) => {

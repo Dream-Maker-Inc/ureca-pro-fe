@@ -1,10 +1,11 @@
 import { css } from "@emotion/react";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 import { Stack, TextField, Typography, TypographyProps } from "@mui/material";
-import { DesktopDatePicker } from "@mui/x-date-pickers";
+
 import { mq } from "@/ui/theme/Screen";
+import { DateRange, DateRangePicker } from "react-date-range";
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 
 type QuestionnaireDateProps = {
   number: string;
@@ -15,8 +16,8 @@ type QuestionnaireDateProps = {
 
 type dateStateProps = {
   startDateState: {
-    value: Date | null;
-    onChange: (p: Date | null) => void;
+    value: any;
+    onChange: (item: any) => any;
     selected: boolean;
   };
   endDateState: {
@@ -39,47 +40,18 @@ export const QuestionnaireDate = ({
       </div>
       <div css={styles.bottomWrapper}>
         <Desc>{desc}</Desc>
-        <Stack
-          width={"100%"}
-          spacing={"12px"}
-          direction={"row"}
-          display="flex"
-          alignItems="center"
-        >
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DesktopDatePicker
-              inputFormat="yyyy-MM-dd"
-              value={state.startDateState.value}
-              onChange={state.startDateState.onChange}
-              disablePast
-              renderInput={(p) => (
-                <TextField
-                  sx={{ width: "100%" }}
-                  css={state.startDateState.selected && styles.pickerField}
-                  {...p}
-                />
-              )}
-            />
-          </LocalizationProvider>
-          <div css={styles.hr}>~</div>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DesktopDatePicker
-              inputFormat="yyyy-MM-dd"
-              value={state.endDateState.value}
-              onChange={state.endDateState.onChange}
-              disablePast
-              disableHighlightToday
-              disabled={!state.startDateState.value}
-              renderInput={(p) => (
-                <TextField
-                  sx={{ width: "100%" }}
-                  css={state.endDateState.selected && styles.pickerField}
-                  {...p}
-                />
-              )}
-            />
-          </LocalizationProvider>
-        </Stack>
+
+        <DateRange
+          editableDateInputs={true}
+          onChange={state.startDateState.onChange}
+          moveRangeOnFirstSelection={false}
+          ranges={state.startDateState.value}
+          dateDisplayFormat={"yyyy-MM-d"}
+          months={2}
+          direction="horizontal"
+          minDate={new Date()}
+          css={styles.dateWrapper}
+        />
       </div>
     </div>
   );
@@ -106,6 +78,10 @@ const styles = {
   bottomWrapper: css`
     width: 100%;
     padding: 0 40px;
+  `,
+
+  dateWrapper: css`
+    width: 100%;
   `,
 
   title: css`
