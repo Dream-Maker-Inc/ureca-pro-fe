@@ -185,12 +185,13 @@ const Content = () => {
   return (
     <section css={styles.contentContainer}>
       <h1 css={styles.title}>
-        퍼블리싱 <span css={styles.contentTitleSpan}>자가 진단 </span>항목
+        퍼블리싱 서비스 문의 전{" "}
+        <span css={styles.contentTitleSpan}>자가 진단 </span>하기
       </h1>
       <ul css={styles.ul}>
         <li>
           고객님께서 유레카에 웹 퍼블리싱 프로젝트를 의뢰함에 있어 상담에 필요한
-          기본 정보를 수집합니다.
+          프로젝트 관련 정보를 수집합니다.
         </li>
         <li>
           본 퍼블리싱 업무는 유지보수 업무가 아닌 신규 개발 업무만 진행
@@ -200,8 +201,8 @@ const Content = () => {
           기존 코드 수정 및 유지보수 업무이실 경우 별도의 상담을 요청해 주세요.
         </li>
         <li>
-          문의 사항은 본 페이지 우측 하단의 채팅 버튼을 클릭하여 언제든 상담이
-          가능합니다.
+          자가 진단 작성 중 문의 사항은 본 페이지 우측 하단의 채팅 버튼을
+          클릭하여 언제든 상담이 가능합니다.
         </li>
       </ul>
 
@@ -231,7 +232,7 @@ const AlertSection = () => {
         <br />
         상세 요청 사항에 따라{" "}
         <span css={styles.alertContentSpan}>실제 견적은 변동</span>될 수 있으니,
-        아래 항목에 체크하신 후 상세 견적 요청을 부탁드립니다.
+        자가 진단을 진행하신 후 상세 견적 요청을 부탁드립니다.
       </div>
     </section>
   );

@@ -11,15 +11,15 @@ export const models: modelsType[] = [
     data: [
       {
         value: "1",
-        text: "이벤트 홍보 목적 (광고 랜딩 페이지 등)",
+        text: "이벤트 홍보 목적",
       },
       {
         value: "2",
-        text: "회사 소개 목적 (회사 홈페이지, 회사 블로그 등)",
+        text: "회사 소개 목적",
       },
       {
         value: "3",
-        text: "웹앱 구축 목적 (하이브리드 웹 에서의 퍼블리싱 등)",
+        text: "웹 페이지 구축 목적",
       },
       { value: "4", text: "기타" },
     ],
@@ -29,11 +29,11 @@ export const models: modelsType[] = [
     data: [
       {
         value: "1",
-        text: "리액트 SPA 스펙 (React, TypeScript, MUI, Emotion 등)",
+        text: "React 기반",
       },
       {
         value: "2",
-        text: "순수 HTML 스펙 (HTML, CSS, JavaScript 등)",
+        text: "HTML, CSS 기반",
       },
     ],
   },
@@ -58,7 +58,7 @@ export const models: modelsType[] = [
       },
       {
         value: "5",
-        text: "기타 형식으로 전달 가능 (직접 입력)",
+        text: "기타 형식으로 전달 가능",
       },
     ],
   },
@@ -92,7 +92,7 @@ export const models: modelsType[] = [
     data: [
       {
         value: "1",
-        text: "알아서 해주세요 (애니메이션 필요 없음)",
+        text: "필요 없어요",
       },
       {
         value: "2",
@@ -142,7 +142,7 @@ export const models: modelsType[] = [
     data: [
       {
         value: "1",
-        text: "알아서 해주세요 (필요 없음)",
+        text: "필요 없어요",
       },
       {
         value: "2",
@@ -163,30 +163,22 @@ export const models: modelsType[] = [
     data: [
       {
         value: "1",
-        text: "인스타그램 광고",
+        text: "SNS 광고",
       },
       {
         value: "2",
-        text: "페이스북 광고",
+        text: "외주 플랫폼",
       },
       {
         value: "3",
-        text: "숨고 플랫폼",
-      },
-      {
-        value: "4",
-        text: "크몽 플랫폼",
-      },
-      {
-        value: "5",
         text: "네이버, 구글 등 포털",
       },
       {
-        value: "6",
+        value: "4",
         text: "지인 소개",
       },
       {
-        value: "7",
+        value: "5",
         text: "기타",
       },
     ],
