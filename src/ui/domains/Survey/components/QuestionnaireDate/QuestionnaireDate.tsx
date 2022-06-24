@@ -15,16 +15,8 @@ type QuestionnaireDateProps = {
 };
 
 type dateStateProps = {
-  startDateState: {
-    value: any;
-    onChange: (item: any) => any;
-    selected: boolean;
-  };
-  endDateState: {
-    value: Date | null;
-    onChange: (p: Date | null) => void;
-    selected: boolean;
-  };
+  value: any;
+  onChange: (item: any) => any;
 };
 export const QuestionnaireDate = ({
   number,
@@ -40,12 +32,11 @@ export const QuestionnaireDate = ({
       </div>
       <div css={styles.bottomWrapper}>
         <Desc>{desc}</Desc>
-
         <DateRange
           editableDateInputs={true}
-          onChange={state.startDateState.onChange}
+          onChange={state.onChange}
           moveRangeOnFirstSelection={false}
-          ranges={state.startDateState.value}
+          ranges={state.value}
           dateDisplayFormat={"yyyy-MM-d"}
           direction="horizontal"
           minDate={new Date()}
