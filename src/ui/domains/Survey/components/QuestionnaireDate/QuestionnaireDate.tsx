@@ -47,7 +47,6 @@ export const QuestionnaireDate = ({
           moveRangeOnFirstSelection={false}
           ranges={state.startDateState.value}
           dateDisplayFormat={"yyyy-MM-d"}
-          months={2}
           direction="horizontal"
           minDate={new Date()}
           css={styles.dateWrapper}
@@ -82,6 +81,12 @@ const styles = {
 
   dateWrapper: css`
     width: 100%;
+    display: flex;
+    justify-content: center;
+    color: red !important;
+    & .rdrMonths .rdrMonth {
+      width: 100%;
+    }
   `,
 
   title: css`
